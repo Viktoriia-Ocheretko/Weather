@@ -60,7 +60,8 @@ a:hover {
 }
 
 .my-name,
-.my-site{
+.my-site,
+.netlify{
     font-weight: 500;
     color: rgb(2, 56, 2);
 }
