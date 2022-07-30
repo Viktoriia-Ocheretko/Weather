@@ -1,0 +1,60 @@
+body {
+  background-color: rgb(222, 238, 238);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+  color: green;
+}
+
+.chosen-city {
+  font-weight: 600;
+}
+
+.card {
+  display: block;
+  margin: 60px 0;
+}
+
+.d-flex {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.cities {
+  font-weight: 670;
+  font-size: larger;
+}
+
+.cities-data {
+  font-size: larger;
+  font-weight: 550;
+}
+
+.btn-outline-success,
+.second-button {
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-success {
+  margin-top: 30px;
+}
+
+.days {
+  font-weight: 600;
+  font-size: larger;
+  text-align: center;
+}
+
+.current-temperature {
+  font-size: x-large;
+  font-weight: 900;
+}
