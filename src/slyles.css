@@ -13,9 +13,6 @@ a:hover {
   color: green;
 }
 
-.chosen-city {
-  font-weight: 600;
-}
 
 .card {
   display: block;
@@ -61,7 +58,12 @@ a:hover {
 
 .my-name,
 .my-site,
-.netlify{
-    font-weight: 500;
-    color: rgb(2, 56, 2);
+.netlify {
+  font-weight: 500;
+  color: rgb(2, 56, 2);
+}
+
+.chosen-city {
+  font-size: larger;
+  font-weight: 800;
 }
