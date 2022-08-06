@@ -33,6 +33,8 @@ let month = months[now.getMonth()];
 
 datePlaceholder.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}, ${year}`;
 
+
+
 //showing conditions
 function displayWeatherCondition(response) {
   document.querySelector("#city-of-choise").innerHTML = response.data.name;
@@ -45,6 +47,11 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#icon").setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    ); 
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 //url
@@ -82,6 +89,8 @@ searchForm.addEventListener("submit", handleSubmit);
 //listen to current location
 let currentLocationButton = document.querySelector("#second-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+//let iconElement = document.querySelector("#icon");
 
 searchCity("Krakow");
 
