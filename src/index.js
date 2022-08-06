@@ -37,10 +37,12 @@ datePlaceholder.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}, ${yea
 
 //showing conditions
 function displayWeatherCondition(response) {
+
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector("#city-of-choise").innerHTML = response.data.name;
-  document.querySelector("#temperature-data").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  document.querySelector("#temperature-data").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -82,6 +84,25 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+
+function displayFahrenheitTemperature(event){
+ event.preventDefault();
+ let temperatureElement = document.querySelector("#temperature-data");
+let tempFah = Math.round((celsiusTemperature * 9) / 5 + 32);
+
+temperatureElement.innerHTML = tempFah;
+}
+
+
+function displayCelsiusTemperature(event) {
+ event.preventDefault();
+ let temperatureElement = document.querySelector("#temperature-data");
+temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+
+let celsiusTemperature = null;
+
 //listen to the city
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
@@ -90,9 +111,18 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#second-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-//let iconElement = document.querySelector("#icon");
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Krakow");
+
+
+
+
 
 //function search(event) {
 //  event.preventDefault();
