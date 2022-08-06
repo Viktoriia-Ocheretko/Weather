@@ -67,3 +67,19 @@ a:hover {
   font-size: larger;
   font-weight: 800;
 }
+
+.weather-forecast-date,
+.weather-forecast-temperature-max,
+.weather-forecast-temperature-min {
+  font-weight: 680;
+  font-size: 18px;
+}
+
+.weather-conditions{
+  font-weight: 700;
+}
+
+
+.days {
+ padding-bottom: 18px;
+}
